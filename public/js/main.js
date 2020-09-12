@@ -236,3 +236,79 @@ $(function(){
 
 		
 	});
+
+
+//bat su kien submit form loc san pham 
+
+	$('.orderby').change(function(event) {
+		/* Act on the event */
+		$('#form-order').submit();
+	});
+
+//lưu sản phẩm vừa xem xuống local storage
+$(function() {
+	//lay id san pham
+	let productID = $('#content_product').attr('data-id');
+	//lay  gia tri trong storage
+	let products = localStorage.getItem('products');
+	console.log(productID);
+	console.log(products);
+if(typeof(productID) !== 'undefined'){
+	if(products == null )
+	{
+
+		arrayProducts = new Array();
+		arrayProducts.push(productID);
+		localStorage.setItem('products',JSON.stringify(arrayProducts));
+	} else {
+		
+		//chuyen ve mang
+		products = $.parseJSON(products);
+		if( products.indexOf(productID) == -1)
+		{
+			products.push(productID);
+			localStorage.setItem('products',JSON.stringify(products));
+		}
+		console.log(products);
+	}
+}
+});
+
+//hiển thị sản phẩm vừa xem ra trang chủ
+$(function(){
+
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+checkRenderProduct = false;
+	$(document).on('scroll',  function() {
+		event.preventDefault();
+		/* Act on the event */
+		
+		if($(window).scrollTop() > 150 && checkRenderProduct == false)
+		{
+			checkRenderProduct = true;
+			let products = localStorage.getItem('products');
+			products = $.parseJSON(products);
+			console.log(products);
+			if(products.length > 0)
+			{
+				$.ajax({
+					url: 'ajax/view-san-pham',
+					method: "POST",
+					data: {id: products},
+					success : function(result){
+						console.log(result);
+						$('#product_view').html('').append(result.data);
+					}
+				})
+				
+				
+			}
+		}
+	});
+	
+})
+

@@ -28,7 +28,7 @@ Chi Tiết Sản Phẩm | LoShip
 		</div>
 		<!-- breadcrumbs area end -->
 		<!-- product-details Area Start -->
-		<div class="product-details-area">
+		<div class="product-details-area" id="content_product" data-id = {{ $products['id']}}>
 			<div class="container">
 				<div class="row">
 					

@@ -3264,5 +3264,7 @@ input#rememberme {
     color: #ff9705;
 }
 
-/*style cho trang tin tuc*/
+.sidebar-tags .active {
+    color: #c2a476;
+}
 

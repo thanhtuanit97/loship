@@ -292,6 +292,8 @@
 </div>
 </div>
 <!-- product section end -->
+
+<div id="product_view"></div>
 <!-- banner-area start -->
 <div class="banner-area">
    <div class="container-fluid">

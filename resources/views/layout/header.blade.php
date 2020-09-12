@@ -10,7 +10,7 @@
 		<nav>
 			<ul>
 				<li class="expand"><a href="{{ route('home.index')}}">Trang Chủ</a></li>
-				<li class="expand"><a href="shop-grid.html">Sản Phẩm</a>
+				<li class="expand"><a href="">Sản Phẩm</a>
 					@if(isset($categories))
 					<div class="restrain mega-menu megamenu1">
 						@foreach($categories as $key => $cate)
@@ -35,7 +35,7 @@
 				<nav>
 					<ul>
 						<li><a href="{{ route('home.index')}}">Trang Chủ</a></li>
-						<li><a href="shop-grid.html">Sản Phẩm</a>
+						<li><a href="">Sản Phẩm</a>
 							<ul>
 								@if(isset($categories))
 

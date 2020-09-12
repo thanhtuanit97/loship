@@ -62,3 +62,8 @@ Route::get('deleteCart','CartController@destroyCart')->name('destroyCart');//xó
   Route::group(['prefix' => 'ajax', 'middleware'=>'checkloginuser'], function () {
     Route::post('/danh-gia-san-pham/{id}', 'RatingController@saveRating')->name('saveRating');
 });
+
+//hien thi san pham vua xem
+  Route::group(['prefix' => 'ajax'], function () {
+    Route::post('/view-san-pham', 'HomeController@renderProduct')->name('view.product.render');
+});
