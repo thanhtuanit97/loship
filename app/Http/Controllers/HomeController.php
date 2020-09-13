@@ -33,6 +33,9 @@ class HomeController extends Controller
 
         $productNew = Product::orderByDesc('id')->with('coupons')->limit(10)->get();
 
+        $productPay =  Product::orderByDesc('pay')->with('coupons')->limit(2)->get();
+
+
       
         // dd($productNew);
 
@@ -41,6 +44,7 @@ class HomeController extends Controller
             'articles'=>$articles,
             'productHot'=>$productHot,
             'productNew'=>$productNew,
+            'productPay' =>$productPay,
         ];
         
         return view('index', $viewData);
