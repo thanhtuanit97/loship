@@ -11,6 +11,7 @@ use App\Models\Article;
 use App\Models\Product;
 use App\Models\Coupon;
 use App\Models\User;
+use App\Models\Rating;
 use DB;
 use Auth;
 class HomeController extends Controller
@@ -35,6 +36,8 @@ class HomeController extends Controller
 
         $productPay =  Product::orderByDesc('pay')->with('coupons')->limit(2)->get();
 
+        $ratingIndex = Rating::orderByDesc('number')->with('user')->limit(5)->get();
+    
 
       
         // dd($productNew);
@@ -45,6 +48,7 @@ class HomeController extends Controller
             'productHot'=>$productHot,
             'productNew'=>$productNew,
             'productPay' =>$productPay,
+            'ratingIndex'=>$ratingIndex,
         ];
         
         return view('index', $viewData);

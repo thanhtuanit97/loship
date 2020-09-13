@@ -503,7 +503,7 @@
                 @endforeach
 								
 							</div>
-              
+
 						</div>
 						<!-- block carousel end -->
 					</div>
@@ -745,18 +745,12 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="crusial-carousel">
+              @foreach($ratingIndex as $rating)
 							<div class="crusial-content">
-								<p>“Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."</p>
-								<span>BootExperts</span>
+								<p>“{{ $rating['content']}}"</p>
+								<span>{{ $rating->user->name }}</span>
 							</div>
-							<div class="crusial-content">
-								<p>“Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."</p>
-								<span>Lavoro Store!</span>
-							</div>
-							<div class="crusial-content">
-								<p>“Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."</p>
-								<span>MR Selim Rana</span>
-							</div>
+							@endforeach
 						</div>
 					</div>
 				</div>
