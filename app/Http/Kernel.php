@@ -19,6 +19,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
+
     ];
 
     /**
@@ -61,7 +62,8 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
          'adminMiddleware'=>\App\Http\Middleware\AdminMiddleware::class,
-         'checkloginuser'=>\App\Http\Middleware\CheckOutOrder::class
+         'checkloginuser'=>\App\Http\Middleware\CheckOutOrder::class,
+         
     ];
 
 

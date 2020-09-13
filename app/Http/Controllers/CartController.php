@@ -40,6 +40,7 @@ class CartController extends Controller
         $data['id'] = $product_info->id;
         $data['name']=$product_info->name;
         $data['weight']=$product_info->price;
+        $data['pay'] = 0;
         $data['options']['image']=$product_info->avatar;
 
         if($request->qty>0){
@@ -74,6 +75,7 @@ class CartController extends Controller
                     }
                 }
             }
+
 
         if($data['qty']>$product_info->quantity){
                     $data['qty']=$product_info->quantity;

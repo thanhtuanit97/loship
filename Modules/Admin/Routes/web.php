@@ -15,7 +15,7 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/', 'AdminController@index')->name('admin.index');
     
     //login, logout
-    Route::view('/login', 'admin::login')->name('login.admin');
+    Route::view('/dang-nhap', 'admin::login')->name('login.admin');
     Route::post('/login', 'AdminController@login')->name('admin.login');
     Route::get('/logout', 'AdminController@logout')->name('admin.logout');
 

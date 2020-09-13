@@ -5,6 +5,7 @@ namespace Modules\Admin\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
 
+
 class AdminServiceProvider extends ServiceProvider
 {
     /**
@@ -29,6 +30,10 @@ class AdminServiceProvider extends ServiceProvider
         $this->registerViews();
         $this->registerFactories();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
+
+        // $router = $this->app['router'];
+         
+        // $router->aliasMiddleware('checkadminsss', \Modules\Admin\Http\Middleware\AdminMiddleware::class);
     }
 
     /**

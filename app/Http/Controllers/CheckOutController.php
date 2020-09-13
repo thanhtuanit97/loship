@@ -72,6 +72,7 @@ class CheckOutController extends Controller
 			$product = Product::find($v_content->id);
 
 			$data['quantity'] = $product['quantity']-$v_content->qty;
+			$data['pay'] = $product['pay'] + $v_content->qty; //cập nhật lại số lượng sản 
 			//nếu không thõa mãn thì return tbao lỗi
 			if($data['quantity'] < 0){
 				return redirect()->back()->with('thongbao','Sản Phẩm trong kho còn không còn đúng số lượng bạn đã đặt');
