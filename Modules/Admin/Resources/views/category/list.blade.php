@@ -28,10 +28,8 @@
             </div>
             <div class="col-sm-3">
               <div class="input-group">
-                <input type="text" class="input-sm form-control" placeholder="Search">
-                <span class="input-group-btn">
-                  <button class="btn btn-sm btn-default" type="button">Go!</button>
-                </span>
+                <input type="text" id="myInput"   class="input-sm form-control" placeholder="Search">
+                
               </div>
             </div>
           </div>
@@ -39,21 +37,17 @@
             <table class="table table-striped b-t b-light">
               <thead>
                 <tr>
-                  <th style="width:20px;">
-                    <label class="i-checks m-b-none">
-                      <input type="checkbox"><i></i>
-                    </label>
-                  </th>
+                  
                   <th>Tên danh mục</th>
                   <th>Title Seo</th>
                   <th>Trạng Thái</th>
                   <th style="width:30px;"></th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="myTable">
                 @foreach ($list_category as $cate)
                   <tr>
-                    <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
+                    
                     <td>{{ $cate['c_name'] }}</td>
                     <td><span class="text-ellipsis"> {{ $cate['c_title_seo'] }} </span></td>
                     <td><span class="text-ellipsis label {{ $cate->getStatus($cate['c_active'])['class'] }}">{{ $cate->getStatus($cate['c_active'])['name'] }}</span></td>

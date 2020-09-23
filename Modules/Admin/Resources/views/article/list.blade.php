@@ -22,12 +22,14 @@
             <div class="col-sm-1">
             </div>
             <div class="col-sm-6">
-              <form class="form-inline" action="{{ route('admin.article.search')}}" method="post">
-                @csrf
-                  <div class="form-group">
-                    <input type="text" class="form-control mb-2 mr-sm-2" id=""  value="{{\Request::get('title')}}" name="title" name="title">
+              <form class="form-inline"  method="post">
+                
+                  <div class="input-group">
+                   
+                      <input type="text" id="myInput"   class="input-sm form-control" placeholder="Search">
+                
                   </div>
-                  <button type="submit" class="btn mb-2">Tìm Kiếm</button>
+                  
               </form>
               
             </div>
@@ -43,7 +45,7 @@
                   <th>Hành Động</th>
                 </tr>
               </thead>
-              <tbody id="getArticle">
+              <tbody id="myTable">
                 @foreach ($list_article as $art)
                   <tr>
                     <td>{{ $art['title']}} </td>

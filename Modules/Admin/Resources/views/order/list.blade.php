@@ -36,12 +36,13 @@
               </div>
               </form> --}}
               <form class="form-inline" action="">
-                  <div class="form-group">
-                    <input type="text" class="form-control mb-2 mr-sm-2" id=""  value="{{\Request::get('name')}}" name="name">
-                  </div>
-                 
-                  <button type="submit" class="btn mb-2">Tìm Kiếm</button>
-              </form>
+               <div class="input-group">
+                <input type="text" id="myInput"   class="input-sm form-control" placeholder="Search">
+                
+              </div>
+              
+              
+            </form>
               
             </div>
           </div>
@@ -58,7 +59,7 @@
                   <th>Hành Động</th>
                 </tr>
               </thead>
-              <tbody id="viewOrder">
+              <tbody class="viewOrder" id="myTable">
             @foreach($list_order as $key => $value)
                <tr>
                       <td>{{ $key+1}}</td>

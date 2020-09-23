@@ -1,4 +1,4 @@
-<ul class="sidebar-menu" id="nav-accordion">
+ <ul class="sidebar-menu" id="nav-accordion">
     @php
         $menus = config('menu');
     @endphp

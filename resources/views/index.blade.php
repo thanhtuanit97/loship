@@ -91,7 +91,10 @@
                     <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
 
                 </head>
-                <body class="home-one">
+                <body class="home-one preloading" >
+                  <div class="load">
+                    <span class="fa fa-spinner xoay icon"></span>
+                  </div>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->

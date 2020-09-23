@@ -228,24 +228,30 @@ Chi Tiết Sản Phẩm | LoShip
 								@foreach($ratings as $rating)
 								<div class="rating-items">
 									<div>
-										<span class="rating-username" style="font-size: 15px; font-weight: 600;">{{ $rating->user->name }}</span>
-										<a href="" style="color: #2ba832; font-weight: 600"> <i class="fa fa-check-circle-o"></i> Đã Mua Hàng Tại LoShip</a>
+										<span class="rating-username" style="font-size: 15px; font-weight: 600; ">{{ $rating->user->name }}</span> |
+										<a href="" style="color: #2ba832; font-weight: 600"> <i class="fa fa-check-circle-o"></i> Đã Mua Hàng Tại LoShip</a> |
+										<span ><i class="fa fa-clock-o"></i> {{ $rating->created_at}}</span>
 									</div>
-									<p>
+									<p style="margin-top: 10px">
+										
+								
 										<span class="list-rating">
 											@for($j = 1; $j <= 5; $j++)
 											    <i class="fa fa-star {{ $j <= $rating->number ? 'active' : ''}}"></i>
 											@endfor
 											<span style="margin-left: 10px;">{{ $rating->content}}</span>
 										</span><br>
-										
-										<a href=""><span style="color: blue"><i class="fa fa-thumbs-up"></i> Thích</span></a>
+										<div style="margin-top: 10px">
+											<a href=""><span style="color: blue"><i class="fa fa-thumbs-up"></i> Thích</span></a>
 										<span style="margin-left: 10px;"><i class="fa fa-comment"></i> Bình Luận</span><br>
-										<span ><i class="fa fa-clock-o"></i> {{ $rating->created_at}}</span>
+										</div>
+										
+										
 									</p>
 										
 									
 								</div>
+								<hr>
 								@endforeach
 							@endif
 						</div>		

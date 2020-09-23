@@ -13,8 +13,9 @@
             <div class="col-sm-6">
               <form class="form-inline" action="">
                   <div class="form-group">
-                    <input type="text" class="form-control mb-2 mr-sm-2" id=""  value="{{\Request::get('name')}}" name="name">
-                  </div>
+                <input type="text" id="myInput"   class="input-sm form-control" placeholder="Search">
+                
+              </div>
                  
                   <button type="submit" class="btn mb-2">Tìm Kiếm</button>
               </form>
@@ -42,7 +43,7 @@
                 </tr>
               </thead>
              
-              <tbody id="viewOrder">
+              <tbody id="myTable">
                 @foreach( $products as $key => $value)
                  <?php 
                     $ageProduct = 0;

@@ -22,9 +22,9 @@ Chi Tiết Đánh Giá Sản Phấm
     <div class="row w3-res-tb">
        <div class="col-sm-6">
         Tên Sản Phẩm : <span style="font-weight: 600;color: #7dd10a;"> 
-      @foreach($ratings as $key => $value)
-      {{ $value->product->name}}
-      @endforeach
+      
+      {{ $products->name}}
+   
         </span>
       </div>
       <div class="col-sm-3 m-b-xs">

@@ -97,19 +97,19 @@ class HomeController extends Controller
         return view('home.orderHistory', compact('categories'));
     }
 
-    public function renderProduct(Request $request)
-    {
-        if($request->ajax())
-        {
-            $listID = $request->id;
-            $products = Product::whereIn('id', $listID)->get();
+    // public function renderProduct(Request $request)
+    // {
+    //     if($request->ajax())
+    //     {
+    //         $listID = $request->id;
+    //         $products = Product::whereIn('id', $listID)->get();
 
-            $html = view('layout.productRender', compact('products'))->render();
-            return response()->json(['data'=> $html]);
-        }
+    //         $html = view('layout.productRender', compact('products'))->render();
+    //         return response()->json(['data'=> $html]);
+    //     }
 
         
-    }
+    // }
 
 
 

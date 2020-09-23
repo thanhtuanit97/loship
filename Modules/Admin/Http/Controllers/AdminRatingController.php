@@ -36,9 +36,11 @@ class AdminRatingController extends Controller
     public function show($id)
     {
         $ratings = Rating::with('product')->with('user')->where('product_id', $id)->paginate(10);
-        // dd($ratings);
+        $products = Product::find($id);
+        // dd($products);
         $viewData = [
-            'ratings' => $ratings
+            'ratings' => $ratings,
+            'products' =>$products
         ];
         return view('admin::rating.show', $viewData);
     }
@@ -80,7 +82,7 @@ class AdminRatingController extends Controller
             $products->total_number -= $ratings->number;
             $products->total_rating -= 1;
             $products->save();
-            return response()->json(['success'=>'Đã Xóa Sản Phẩm Thành Công!']); 
+            return response()->json(['success'=>'Đã Xóa Đánh Giá Sản Phẩm Thành Công!']); 
         } else 
         {
             return response()->json(['errors'=>'Thất bại, vui lòng kiểm tra lại!']);

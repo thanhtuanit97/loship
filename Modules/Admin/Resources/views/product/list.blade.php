@@ -47,7 +47,7 @@
               </form> --}}
               <form class="form-inline" action="">
                   <div class="form-group">
-                    <input type="text" class="form-control mb-2 mr-sm-2" id=""  value="{{\Request::get('name')}}" name="name">
+                    <input type="text" id="myInput"  placeholder="Search for names.." class="input-sm form-control">
                   </div>
                   <div class="form-group">
                      <select name="cate" class="input-sm form-control w-sm inline v-middle">
@@ -80,7 +80,7 @@
                   <th>Hành Động</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="myTable">
                 @foreach ($list_product as $pro)
                 <?php 
                   $age = 0;

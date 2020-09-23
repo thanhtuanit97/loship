@@ -8,6 +8,8 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Rating;
 use DB;
+use Session;
+session_start();
 class ProductController extends Controller
 {
     /**
@@ -17,6 +19,7 @@ class ProductController extends Controller
      */
     public function productDetail($id)
     {
+        
        $categories = Category::where(['c_active'=>Category::STATUS_PUBLIC])->get();
        $products   = Product::where('id', $id)->with('coupons')->first();
        $ratings    = Rating::with('user')->where('product_id', $id)->orderbyDesc('id')->get();

@@ -50,11 +50,12 @@
               </form> --}}
 
               <form class="form-inline" action="">
-                  <div class="form-group">
-                    <input type="text" class="form-control mb-2 mr-sm-2" id=""  value="{{\Request::get('name')}}" name="name">
-                  </div>
+                  <div class="input-group">
+                <input type="text" id="myInput"   class="input-sm form-control" placeholder="Search">
+                
+              </div>
                   
-                  <button type="submit" class="btn mb-2">Duyệt</button>
+                  
               </form>
               
             </div>
@@ -77,7 +78,7 @@
                   <th>Hành Động</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="myTable">
                 @foreach($list_coupon as $key => $value)
                 <tr>
                   <td>{{ $key+1 }}</td>

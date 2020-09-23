@@ -56,7 +56,7 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('unactive-article/{id}', 'AdminArticleController@unactivearticle')->name('admin.article.unactive');
         Route::get('active-article/{id}', 'AdminArticleController@activearticle')->name('admin.article.active');
         Route::get('fillterArticel/{id}', 'AdminArticleController@FillterArticel')->name('admin.article.fillterArticel');
-        Route::post('search', 'AdminArticleController@search')->name('admin.article.search');
+        
     });
     
     //coupon

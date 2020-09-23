@@ -32,13 +32,7 @@ class AdminArticleController extends Controller
         return view('admin::article.list', $viewData);
     }
 
-    public function search(Request $request)
-    {
-        $keywords = $request->title;
-        $list_article = Article::where('title', 'LIKE', '%'.$keywords.'%')->paginate(10);
-        return view('admin::article.list', compact('list_article'));
-
-    }
+   
     /**
      * Show the form for creating a new resource.
      * @return Renderable

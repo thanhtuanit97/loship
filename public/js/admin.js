@@ -210,7 +210,7 @@ $(document).ready(function () {
         console.log(option);
         $.get('/admin/orders/fillterOrder/'+option, function(data) {
             // dd(data);
-            $('#viewOrder').html(data);
+            $('.viewOrder').html(data);
         })
      });
 
@@ -264,6 +264,18 @@ $(document).ready(function () {
             
         });
     });
+
+
+
+    //Jquery tìm kiếm
+      $('#myInput').on('keyup', function(event) { //khi gõ chữ trong ô input
+        event.preventDefault();
+        /* Act on the event */
+        var tukhoa = $(this).val().toLowerCase(); // lấy kí tự đó về và chuyển ang dạng chữ thường
+        $('#myTable tr').filter(function() { //lọc giá trị nơi bảng trực tiếp tại tbody và tr
+         $(this).toggle($(this).text().toLowerCase().indexOf(tukhoa) > -1); //tìm kiems gia tri phù hợp trong bảng
+        });
+      });   
 
 });
 
